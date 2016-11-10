@@ -4,6 +4,7 @@
   * Created by lx on 11/6/16.
   */
 
+import akka.actor.Actor
 // SIMPLE
 class Upper {
   def upper(strings: String*): Seq[String] = {
@@ -16,18 +17,6 @@ object Sig {
 }
 
 
-//Concurrency
-case class Point(x: Double, y: Double = 0.0)
-
-abstract class Shape() {
-  def draw(f: String => Unit): Unit = f(s"draw: ${this.toString}")
-}
-
-case class Circle(center: Point, radius: Double) extends Shape
-
-case class Rectangle(leftTop: Point, h: Double, w: Double) extends Shape
-
-case class Triangle(p1: Point, p2: Point, p3: Point) extends Shape
 
 object Chapter1 extends App {
   override def main(args: Array[String]) {
